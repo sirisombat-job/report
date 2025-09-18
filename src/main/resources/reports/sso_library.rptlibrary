@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.27" id="1">
+    <property name="comments">Copyright (c) 2025 &lt;&lt;sso>></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.20.0.v202505111501</property>
+    <property name="units">in</property>
+    <property name="theme">defaultTheme</property>
+    <parameters>
+        <scalar-parameter name="ReportCode" id="726">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="UserName" id="728">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <themes>
+        <theme name="defaultTheme" id="4"/>
+    </themes>
+    <components>
+        <label name="ssoLabel" id="5">
+            <text-property name="text">สำนักงานประกันสังคม</text-property>
+        </label>
+    </components>
+    <page-setup>
+        <simple-master-page name="NewSimpleMasterPage" id="3">
+            <page-header>
+                <text-data name="SSO_PAGE" id="731">
+                    <property name="fontFamily">"TH SarabunPSK"</property>
+                    <property name="textAlign">right</property>
+                    <expression name="valueExpr">"หน้าที่ " + pageNumber + "/" + totalPage</expression>
+                    <property name="contentType">html</property>
+                </text-data>
+            </page-header>
+            <page-footer>
+                <grid name="NewGrid" id="710">
+                    <property name="fontFamily">"TH SarabunPSK"</property>
+                    <property name="display">block</property>
+                    <property name="canShrink">false</property>
+                    <property name="width">7.84375in</property>
+                    <column id="711">
+                        <property name="width">6.28125in</property>
+                    </column>
+                    <column id="712">
+                        <property name="width">1.5625in</property>
+                    </column>
+                    <row id="713">
+                        <property name="whiteSpace">normal</property>
+                        <cell id="714">
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="verticalAlign">top</property>
+                            <data name="NewData" id="729">
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">FooterLableLine1L</property>
+                                        <text-property name="displayName">FooterLableLine1L</text-property>
+                                        <expression name="expression" type="javascript">"รายงาน: " + params["ReportCode"].value</expression>
+                                        <property name="dataType">string</property>
+                                        <property name="allowExport">true</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">FooterLableLine1L</property>
+                            </data>
+                        </cell>
+                        <cell id="715">
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="verticalAlign">top</property>
+                            <text-data name="NewTextData" id="722">
+                                <property name="textAlign">left</property>
+                                <property name="height">0.25in</property>
+                                <property name="width">1.5in</property>
+                                <expression name="valueExpr">"ชื่อผู้พิมพ์ : " + params["UserName"].value</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                    <row id="716">
+                        <cell id="717">
+                            <property name="verticalAlign">top</property>
+                        </cell>
+                        <cell id="718">
+                            <property name="verticalAlign">top</property>
+                            <text-data name="NewTextData1" id="723">
+                                <property name="textAlign">left</property>
+                                <property name="whiteSpace">pre</property>
+                                <property name="display">block</property>
+                                <property name="height">0.25in</property>
+                                <property name="width">1.5in</property>
+                                <expression name="valueExpr">importPackage(Packages.java.util);&#13;
+importPackage(Packages.java.text);&#13;
+var today = new Date();&#13;
+var thaiLocale = new Locale("th", "TH");&#13;
+var formatter = new SimpleDateFormat("วันที่พิมพ์ : dd/MM/yyyy HH:mm:ss", thaiLocale);&#13;
+formatter.format(today);</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+</library>

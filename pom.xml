@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>4.0.0-SNAPSHOT</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.birt</groupId>
+	<artifactId>report</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>report</name>
+	<description>birt report project for Spring Boot</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+	
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.eclipse.birt</groupId>
+		    <artifactId>org.eclipse.birt.core</artifactId>
+		    <version>4.20.0</version>
+		</dependency>		
+
+		<dependency>
+		    <groupId>org.eclipse.birt</groupId>
+		    <artifactId>org.eclipse.birt.report.engine</artifactId>
+		    <version>4.20.0</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.eclipse.birt</groupId>
+		    <artifactId>org.eclipse.birt.report.engine.emitter.html</artifactId>
+		    <version>4.20.0</version> 
+		</dependency>
+
+	    <dependency>
+	        <groupId>org.eclipse.birt</groupId>
+	        <artifactId>org.eclipse.birt.report.engine.emitter.pdf</artifactId>
+	        <version>4.20.0</version>
+	    </dependency>
+
+
+
+		<dependency>
+		    <groupId>io.github.reporting-solutions</groupId>
+		    <artifactId>org.eclipse.birt.report.engine.script.javascript</artifactId>
+		    <version>4.8.0</version>
+		</dependency>
+
+
+<dependency>
+    <groupId>org.eclipse.birt</groupId>
+    <artifactId>org.eclipse.birt.report.model</artifactId>
+    <version>4.20.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.eclipse.birt</groupId>
+    <artifactId>org.eclipse.birt.data</artifactId>
+    <version>4.20.0</version>
+</dependency>
+
+	<dependency>
+    <groupId>org.eclipse.birt</groupId>
+    <artifactId>org.eclipse.birt.report.data.oda.jdbc</artifactId>
+    <version>4.20.0</version>
+</dependency>
+
+<dependency>
+    <groupId>com.oracle.database.jdbc</groupId>
+    <artifactId>ojdbc17</artifactId>
+    <version>23.9.0.25.07</version>
+</dependency>
+<!--
+<dependency>
+    <groupId>org.eclipse.birt.runtime</groupId>
+    <artifactId>org.eclipse.birt.runtime</artifactId>
+    <version>4.6.0-20160607</version>
+</dependency>
+-->
+
+<dependency>
+    <groupId>org.eclipse.birt</groupId>
+    <artifactId>org.eclipse.birt.report.viewer</artifactId>
+    <version>4.9.0</version>
+</dependency>
+
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+					
+
+			
+		</plugins>
+	</build>
+	
+	
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
+
+</project>
