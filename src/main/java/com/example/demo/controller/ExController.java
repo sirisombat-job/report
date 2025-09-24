@@ -1,10 +1,11 @@
 package com.example.demo.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.birt.report.engine.api.HTMLRenderOption;
 import org.eclipse.birt.report.engine.api.PDFRenderOption;
 
 import com.example.demo.model.Book;
-//import com.example.demo.service.BirtReportService;
 import com.example.demo.service.BookService;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -26,8 +27,17 @@ public class ExController {
 	 	@Autowired
 	    private BookService bookService;
 	 	
+	 	private static final Logger logger = LogManager.getLogger(ExController.class);
+	 	
 	    @GetMapping("/")
 	    public String home() {
+	    	
+	        if (logger.isDebugEnabled()) {
+	            logger.debug("Welcome to the Book API!");
+	        }
+	        
+	        logger.debug("Hello from Log4j 2");
+	    	
 	        return "Welcome to the Book API!";
 	    }
 
